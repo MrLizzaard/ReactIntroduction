@@ -14,15 +14,17 @@ body {
   background-color: var(--background-color);
   color: var(--color);
   margin: 0;
+  padding: 0;
   display: flex;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
+  overflow: hidden;
 }
 
 .bg {
   position: absolute;
-  z-index: -1;
+  z-index: -100;
   top: 0;
   left: 0;
   width: 100%;
@@ -31,23 +33,40 @@ body {
 
 .userName {
   background-color: var(--background-color);
-  width: 300px;
+  margin: 0;
+  width: 250px;
   height: 150px;
-  font-size: 15px;
+  font-size: 10px;
   display: flex;
-  flex-wrap: wrap;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   border-radius: 50%;
   box-shadow: 0px 0px 10px #bdc581;
-  opacity: 0.5;
+  opacity: 0.75;
+  transition: 0.1s linear;
 }
 
-.getUserName {
+.hover {
+  width: 380px;
+  height: 200px;
+  font-size: 15px;
+  opacity: 1;
+}
+
+.textboxName {
   width: 200px;
   height: 20px;
   border: none;
   border-radius: 5px;
   box-shadow: 2px 2px 5px grey;
+}
+
+.adjustBtn {
+  border: none;
+  background-color: var(--background-color);
+}
+
+.hidden {
+  display: none;
 }
