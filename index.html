@@ -2,20 +2,27 @@
 <html>
   <head>
     <meta charset="UTF-8" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+      integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk"
+      crossorigin="anonymous"
+    />
     <link rel="stylesheet" href="style.css" />
     <script src="main.js" defer></script>
     <title>ToDoMindMap</title>
   </head>
   <body>
     <img src="bg/1.jpg" class="bg" />
-    <div class="border">
-      <div class="userName">
-        <h2>Hello! please type your name</h2>
-        <button class="adjustBtn hidden">❌</button>
-        <form class="getUserName">
-          <input class="textboxName" type="text" placeholder="Name.." />
-        </form>
-      </div>
+
+    <div class="userName">
+      <h1>Hello! please type your name</h1>
+
+      <button class="adjustBtn hidden"><i class="fas fa-times"></i></button>
+
+      <form class="getUserName">
+        <input class="textboxName" type="text" spellcheck="false" />
+      </form>
     </div>
   </body>
 </html>

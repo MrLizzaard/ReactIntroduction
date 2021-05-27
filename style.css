@@ -1,8 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&family=Poppins:wght@200;400;600&display=swap");
 
 :root {
-  --background-color: #cad3c8;
-  --color: #353b48;
+  --color: #ecf0f1;
 }
 
 * {
@@ -11,13 +10,11 @@
 
 body {
   font-family: "Poppins", "Noto Sans KR", sans-serif;
-  background-color: var(--background-color);
+  background-color: black;
   color: var(--color);
   margin: 0;
   padding: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  height: 100%;
   min-height: 100vh;
   overflow: hidden;
 }
@@ -32,41 +29,53 @@ body {
 }
 
 .userName {
-  background-color: var(--background-color);
   margin: 0;
-  width: 250px;
-  height: 150px;
-  font-size: 10px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  border-radius: 50%;
-  box-shadow: 0px 0px 10px #bdc581;
-  opacity: 0.75;
-  transition: 0.1s linear;
-}
-
-.hover {
-  width: 380px;
-  height: 200px;
-  font-size: 15px;
-  opacity: 1;
+  font-size: 100%;
+  transition: 0.3s;
 }
 
 .textboxName {
-  width: 200px;
-  height: 20px;
-  border: none;
-  border-radius: 5px;
-  box-shadow: 2px 2px 5px grey;
+  height: 30px;
+  width: 100%;
+  background-color: transparent;
+  border: 3px solid var(--color);
+  caret-color: transparent;
+  color: var(--color);
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
 }
 
 .adjustBtn {
+  background-color: transparent;
+  padding: 0;
+  margin: 0;
+  width: 20px;
+  height: 20px;
+  color: var(--color);
   border: none;
-  background-color: var(--background-color);
 }
 
 .hidden {
   display: none;
+}
+
+.gotName {
+  position: absolute;
+  top: 100%;
+  transform: translate(-50%, -100%);
+  flex-direction: row;
+  transition: 0.3s;
+  animation: linear;
+}
+
+.gotName h1 {
+  margin-right: 30px;
 }

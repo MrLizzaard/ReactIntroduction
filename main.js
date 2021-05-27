@@ -1,36 +1,26 @@
 const user = document.querySelector(".userName");
 const mainForm = document.querySelector(".getUserName");
 const textbox = document.querySelector(".textboxName");
+const btn = user.querySelector(".adjustBtn");
 
-const NAME_LS = "name";
-
-function mouseHandler() {
-  user.addEventListener("mouseenter", mouseEnter);
-  user.addEventListener("mouseleave", mouseLeave);
-}
-function mouseEnter(event) {
-  user.classList.add("hover");
-}
-function mouseLeave(event) {
-  user.classList.remove("hover");
-}
+const NAME_LS = "userName";
 
 function PrintName() {
   const name = localStorage.getItem(NAME_LS);
   if (name === null) {
-    nameSubmit();
+    mainForm.addEventListener("submit", submitted);
   } else {
     mainForm.classList.add("hidden");
-    let nameContainer = user.querySelector("h2");
+    let nameContainer = user.querySelector("h1");
     let name = localStorage.getItem(NAME_LS);
     nameContainer.innerText = `Hello! ${name}`;
-    let btn = user.querySelector(".adjustBtn");
-    btn.classList.remove("hidden");
     btn.addEventListener("click", delName);
+    setTimeout(() => {
+      user.querySelector("h1").innerText = name;
+      user.classList.add("gotName");
+      btn.classList.remove("hidden");
+    }, 2000);
   }
-}
-function nameSubmit() {
-  mainForm.addEventListener("submit", submitted);
 }
 function submitted(event) {
   event.preventDefault();
@@ -40,15 +30,15 @@ function submitted(event) {
   PrintName();
 }
 function delName() {
-  user.querySelector("h2").innerText = `Hello! please type your name`;
-  user.querySelector(".adjustBtn").classList.add("hidden");
+  user.querySelector("h1").innerText = `Hello! please type your name`;
+  btn.classList.add("hidden");
   mainForm.classList.remove("hidden");
+  user.classList.remove("gotName");
   localStorage.removeItem(NAME_LS);
-  PrintName();
+  -PrintName();
 }
 
 function init() {
-  mouseHandler();
   PrintName();
 }
 
