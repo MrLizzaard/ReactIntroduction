@@ -20,7 +20,7 @@ body {
 }
 
 .clock {
-  position: sticky;
+  position: absolute;
   margin: 10px;
   font-size: 20px;
 }
@@ -85,4 +85,57 @@ body {
 
 .gotName h1 {
   margin-right: 30px;
+}
+
+.addDream {
+  position: absolute;
+  padding: 0;
+  margin: 0;
+}
+
+.noDream {
+  font-size: 100px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: 0.2s linear;
+}
+
+.yesDream {
+  font-size: 30px;
+  top: 0;
+  left: 100%;
+  transform: translate(-150%, 25%);
+  transition: 0.2s linear;
+}
+
+.dreamForm {
+  position: absolute;
+  padding: 0;
+  margin: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.dreamText {
+  background-color: transparent;
+  border: 3px solid var(--color);
+  color: var(--color);
+  font-weight: 600;
+  font-size: 20px;
+  width: 15rem;
+  height: 2rem;
+}
+
+.dreams {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%);
+  display: flex;
+  list-style-type: none;
+}
+.dreams li {
+  margin: 0 20px;
 }
