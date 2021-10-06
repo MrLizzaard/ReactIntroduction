@@ -73,12 +73,6 @@ body {
 
 /* main */
 
-.scrollContainer {
-}
-
-.contentsWrap {
-}
-
 .contentsWrap .main {
   height: 100vh;
   position: relative;

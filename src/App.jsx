@@ -8,7 +8,6 @@ import Main from "./components/Main/main";
 
 const App = (props) => {
   const contain = useRef(null);
-  const [scrollY, setScrollY] = useState(0);
   const [bodyHeight, setBodyHeight] = useState(0);
 
   useEffect(() => {
