@@ -1,3 +1,4 @@
+import { infinity } from "check-types";
 import React, { useEffect, useRef, useState } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
@@ -8,17 +9,21 @@ import Main from "./components/Main/main";
 const App = (props) => {
   const contain = useRef(null);
   const [scrollY, setScrollY] = useState(0);
-  const bodyHeight = document.body.scrollHeight;
-  const [YOffset, setYOffset] = useState(0);
-  // contain.current.scrollHeight
-
-  const onScroll = () => {
-    console.log(bodyHeight);
-  };
+  const [bodyHeight, setBodyHeight] = useState(0);
 
   useEffect(() => {
-    window.addEventListener("scroll", onScroll);
-  }, []);
+    const onScroll = () => {
+      const s = window.pageYOffset / bodyHeight;
+      if (s !== infinity) {
+        contain.current.style.transform = `translate3d(0px, -${
+          (contain.current.scrollHeight - document.querySelector(".App").clientHeight) * s
+        }px, 0px)`;
+      }
+      console.log(contain.current.scrollHeight);
+    };
+    setBodyHeight(document.body.scrollHeight - document.querySelector(".App").clientHeight);
+    window.addEventListener("scroll", onScroll, true);
+  }, [bodyHeight]);
 
   return (
     <Router>
