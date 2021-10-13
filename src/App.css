@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap");
 
 * {
   box-sizing: border-box;
@@ -76,4 +77,48 @@ body {
 .contentsWrap .main {
   height: 100vh;
   position: relative;
+}
+
+.m1 .topTitle {
+  position: absolute;
+  font-size: 16.6vw;
+  font-weight: 900;
+  font-family: "Open Sans";
+  letter-spacing: -11px;
+  line-height: 0.8;
+  left: 30px;
+  right: 30px;
+  top: 0;
+  z-index: 5;
+  pointer-events: none;
+  perspective: 200px;
+  overflow: hidden;
+  -webkit-text-stroke: 1px #282828;
+  color: #282828;
+}
+
+.m1 .bottomTitle {
+  position: absolute;
+  font-size: 16.65vw;
+  font-weight: 900;
+  font-family: "Open Sans";
+  letter-spacing: -11px;
+  line-height: 0.8;
+  right: 40px;
+  bottom: 20px;
+  z-index: 5;
+  pointer-events: none;
+  perspective: 200;
+  overflow: hidden;
+  -webkit-text-stroke: 1px #282828;
+  color: #282828;
+}
+
+.light {
+  font-weight: 300;
+  letter-spacing: -15px;
+}
+
+.medium {
+  font-weight: 500;
 }
